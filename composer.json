@@ -53,7 +53,15 @@
 		"pronamic/pronamic-cli": "^1.1"
 	},
 	"scripts": {
-		"build": "vendor/bin/pronamic wp-build",
+		"build": [
+			"rm -rf ./build",
+			"mkdir ./build",
+			"mkdir ./build/stage-1",
+			"mkdir ./build/stage-2",
+			"rsync --recursive --verbose --exclude-from=.distignore --exclude=/vendor/ ./ ./build/stage-1/",
+			"composer install --no-dev --prefer-dist --optimize-autoloader --working-dir=./build/stage-1/",
+			"rsync --recursive --verbose --exclude-from=.distignore ./build/stage-1/ ./build/stage-2/"
+		],
 		"phpcs": "vendor/bin/phpcs",
 		"translate": [
 			"@build",
