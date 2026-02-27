@@ -7,9 +7,6 @@
 # Source
 /src/
 
-# Composer
-/vendor/
-
 # Node
 /node_modules/
 
@@ -21,3 +18,11 @@
 /package.json
 
 /phpcs.ruleset.xml
+
+.DS_Store
+
+/.editorconfig
+
+/deploy.php
+
+/phpcs.xml.dist
