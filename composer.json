@@ -1,7 +1,7 @@
 {
-	"name": "pronamic/wt-orbis-4",
+	"name": "pronamic/wt-orbis-5",
 	"description": "The default WordPress theme for Orbis.",
-	"version": "3.0.0",
+	"version": "5.0.0",
 	"keywords": [
 		"orbis",
 		"wordpress",
@@ -39,7 +39,7 @@
 			"automattic/jetpack-autoloader": true,
 			"dealerdirect/phpcodesniffer-composer-installer": true
 		},
-		"wp-slug": "orbis-4"
+		"wp-slug": "orbis-5"
 	},
 	"require": {
 		"pronamic/wp-money": "^2.4",
