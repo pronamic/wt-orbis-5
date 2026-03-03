@@ -40,7 +40,7 @@
 				</div>
 
 				<div class="primary-nav" role="navigation">
-					<h3><?php esc_html_e( 'Menu', 'orbis-4' ); ?></h3>
+					<h3><?php esc_html_e( 'Menu', 'orbis-5' ); ?></h3>
 
 					<?php
 
@@ -55,7 +55,7 @@
 
 					?>
 
-					<span class="orbis-toggle-nav text-light mt-2"><span class="nav-label"><?php esc_html_e( 'Collapse menu', 'orbis-4' ); ?></span></span>
+					<span class="orbis-toggle-nav text-light mt-2"><span class="nav-label"><?php esc_html_e( 'Collapse menu', 'orbis-5' ); ?></span></span>
 				</div>
 			</div>
 
@@ -79,14 +79,14 @@
 
 								<ul class="dropdown-menu dropdown-menu-right">
 									<li class="dropdown-item">
-										<a href="http://orbiswp.com/help/"><i class="fa fa-question-circle"></i> <?php esc_html_e( 'Help', 'orbis-4' ); ?></a>
+										<a href="http://orbiswp.com/help/"><i class="fa fa-question-circle"></i> <?php esc_html_e( 'Help', 'orbis-5' ); ?></a>
 									</li>
 									<li class="dropdown-item">
-										<a href="<?php echo esc_attr( admin_url( 'profile.php' ) ); ?>"><i class="fa fa-user"></i> <?php esc_html_e( 'Edit profile', 'orbis-4' ); ?></a>
+										<a href="<?php echo esc_attr( admin_url( 'profile.php' ) ); ?>"><i class="fa fa-user"></i> <?php esc_html_e( 'Edit profile', 'orbis-5' ); ?></a>
 									</li>
 									<li class="dropdown-divider"></li>
 									<li class="dropdown-item">
-										<a href="<?php echo esc_attr( wp_logout_url() ); ?>"><i class="fa fa-power-off"></i> <?php esc_html_e( 'Log out', 'orbis-4' ); ?></a>
+										<a href="<?php echo esc_attr( wp_logout_url() ); ?>"><i class="fa fa-power-off"></i> <?php esc_html_e( 'Log out', 'orbis-5' ); ?></a>
 										</li>
 								</ul>
 							</li>
@@ -97,7 +97,7 @@
 								<div class="dropdown-menu dropdown-menu-right">
 									<form method="get" class="navbar-form" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
 										<div class="form-group">
-											<input type="search" name="s" class="form-control search-input" placeholder="<?php esc_attr_e( 'Search', 'orbis-4' ); ?>" value="<?php echo esc_attr( $s ); ?>">
+											<input type="search" name="s" class="form-control search-input" placeholder="<?php esc_attr_e( 'Search', 'orbis-5' ); ?>" value="<?php echo esc_attr( $s ); ?>">
 										</div>
 									</form>
 								</div>

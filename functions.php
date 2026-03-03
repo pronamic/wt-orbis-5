@@ -30,7 +30,7 @@ function orbis_status_taxonomy_add_field() {
 
 	<tr class="form-field">  
 		<th scope="row" valign="top">  
-			<label for="status_type"><?php esc_html_e( 'Status type.', 'orbis-4' ); ?></label>
+			<label for="status_type"><?php esc_html_e( 'Status type.', 'orbis-5' ); ?></label>
 		</th>  
 		<td>
 			<select name="status_type" id="status_type" >
@@ -43,7 +43,7 @@ function orbis_status_taxonomy_add_field() {
 				<option value="light">Light</option>
 				<option value="dark">Dark</option>
 			</select>
-			<span class="description"><?php esc_html_e( 'The type of status to show.', 'orbis-4' ); ?></span>
+			<span class="description"><?php esc_html_e( 'The type of status to show.', 'orbis-5' ); ?></span>
 		</td>
 	</tr>
 	<br /><br />
@@ -58,7 +58,7 @@ function orbis_status_taxonomy_edit_field( $term ) {
 
 	<tr class="form-field">
 		<th scope="row" valign="top">
-			<label for="status_type"><?php esc_html_e( 'Status type.', 'orbis-4' ); ?></label>
+			<label for="status_type"><?php esc_html_e( 'Status type.', 'orbis-5' ); ?></label>
 		</th>
 		<td>
 			<select name="status_type" id="status_type" >
@@ -80,7 +80,7 @@ function orbis_status_taxonomy_edit_field( $term ) {
 				<option value="light">Light</option>
 				<option value="dark">Dark</option>
 			</select>
-			<span class="description"><?php esc_html_e( 'The type of status to show.', 'orbis-4' ); ?></span>
+			<span class="description"><?php esc_html_e( 'The type of status to show.', 'orbis-5' ); ?></span>
 		</td>
 	</tr>
 	<br /><br />
@@ -166,7 +166,7 @@ if ( ! function_exists( 'orbis_price' ) ) {
 function orbis_the_content_empty( $content ) {
 	if ( is_singular( [ 'post', 'orbis_person', 'orbis_project' ] ) ) {
 		if ( empty( $content ) ) {
-			$content = '<p class="alt">' . __( 'No description.', 'orbis-4' ) . '</p>';
+			$content = '<p class="alt">' . __( 'No description.', 'orbis-5' ) . '</p>';
 		}
 	}
 
@@ -213,10 +213,10 @@ add_action( 'wp_ajax_load_timesheet_data', 'orbis_load_timesheet_data' );
  */
 function orbis_get_title() {
 	if ( is_front_page() ) {
-		return __( 'Dashboard', 'orbis-4' );
+		return __( 'Dashboard', 'orbis-5' );
 
 	} elseif ( is_home() ) {
-		return __( 'News', 'orbis-4' );
+		return __( 'News', 'orbis-5' );
 
 	} elseif ( is_page() || is_single() ) {
 		return get_the_title();
@@ -234,13 +234,13 @@ function orbis_get_title() {
 		return post_type_archive_title();
 
 	} elseif ( is_search() ) {
-		return __( 'Search', 'orbis-4' );
+		return __( 'Search', 'orbis-5' );
 
 	} elseif ( is_404() ) {
-		return __( '404 - Page not found', 'orbis-4' );
+		return __( '404 - Page not found', 'orbis-5' );
 
 	} else {
-		return __( 'Unknown', 'orbis-4' );
+		return __( 'Unknown', 'orbis-5' );
 
 	}
 }

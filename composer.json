@@ -65,7 +65,7 @@
 		"phpcs": "vendor/bin/phpcs",
 		"translate": [
 			"@build",
-			"rsync --recursive --delete --verbose ./build/project/languages/ ./languages/"
+			"rsync --recursive --delete --verbose ./build/stage-2/languages/ ./languages/"
 		],
 		"qa": [
 			"@phpcs"

@@ -14,9 +14,9 @@ if ( $query->have_posts() ) : ?>
 		<table class="table table-striped mb-0">
 			<thead>
 				<tr>
-					<th class="border-top-0"><?php esc_html_e( 'Description', 'orbis-4' ); ?></th>
-					<th class="border-top-0"><?php esc_html_e( 'Time', 'orbis-4' ); ?></th>
-					<th class="border-top-0"><?php esc_html_e( 'Comments', 'orbis-4' ); ?></th>
+					<th class="border-top-0"><?php esc_html_e( 'Description', 'orbis-5' ); ?></th>
+					<th class="border-top-0"><?php esc_html_e( 'Time', 'orbis-5' ); ?></th>
+					<th class="border-top-0"><?php esc_html_e( 'Comments', 'orbis-5' ); ?></th>
 				</tr>
 			</thead>
 
@@ -50,7 +50,7 @@ if ( $query->have_posts() ) : ?>
 
 	<div class="card-body">
 		<p class="text-muted m-0">
-			<?php esc_html_e( 'No tasks found.', 'orbis-4' ); ?>
+			<?php esc_html_e( 'No tasks found.', 'orbis-5' ); ?>
 		</p>
 	</div>
 

@@ -18,7 +18,7 @@ $query = new WP_Query(
 
 ?>
 <div class="card mb-3">
-	<div class="card-header"><?php esc_html_e( 'Connected Companies', 'orbis-4' ); ?></div>
+	<div class="card-header"><?php esc_html_e( 'Connected Companies', 'orbis-5' ); ?></div>
 
 	<?php if ( $query->have_posts() ) : ?>
 
@@ -54,7 +54,7 @@ $query = new WP_Query(
 
 		<div class="card-body">
 			<p class="text-muted m-0">
-				<?php esc_html_e( 'No companies connected.', 'orbis-4' ); ?>
+				<?php esc_html_e( 'No companies connected.', 'orbis-5' ); ?>
 			</p>
 		</div>
 
