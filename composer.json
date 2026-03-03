@@ -8,7 +8,7 @@
 		"theme",
 		"bootstrap"
 	],
-	"homepage": "http://www.pronamic.eu/themes/orbis/",
+	"homepage": "http://www.pronamic.eu/themes/orbis-5/",
 	"authors": [
 		{
 			"name": "Remco Tolsma",
@@ -25,8 +25,8 @@
 	],
 	"support": {
 		"email": "support@pronamic.nl",
-		"issues": "https://github.com/pronamic/wt-orbis2/issues",
-		"source": "https://github.com/pronamic/wt-orbis2"
+		"issues": "https://github.com/pronamic/wt-orbis-5/issues",
+		"source": "https://github.com/pronamic/wt-orbis-5"
 	},
 	"type": "wordpress-theme",
 	"autoload": {
