@@ -82,9 +82,6 @@
 
 								<ul class="dropdown-menu dropdown-menu-end">
 									<li>
-										<a class="dropdown-item" href="http://orbiswp.com/help/"><i class="fa fa-question-circle"></i> <?php esc_html_e( 'Help', 'orbis-5' ); ?></a>
-									</li>
-									<li>
 										<a class="dropdown-item" href="<?php echo esc_url( admin_url( 'profile.php' ) ); ?>"><i class="fa fa-user"></i> <?php esc_html_e( 'Edit profile', 'orbis-5' ); ?></a>
 									</li>
 									<li><hr class="dropdown-divider"></li>
