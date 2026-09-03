@@ -1,7 +1,7 @@
 <?php
 /**
  * Orbis 4 deploy
- * 
+ *
  * @package casinowizard-rtp
  */
 
@@ -9,7 +9,7 @@ namespace Deployer;
 
 require 'recipe/common.php';
 
-set( 'theme_slug', 'orbis-4' );
+set( 'theme_slug', 'orbis-5' );
 
 set( 'build_path', './build/' );
 
@@ -17,7 +17,7 @@ host( 'orbis.pronamic.nl' )
 	->set( 'hostname', 'esm7.siteground.biz' )
 	->set( 'remote_user', 'u155-jlog1cramrrx' )
 	->set( 'port', 18765 )
-	->set( 'deploy_path', '~/projects/wt-orbis-4' )
+	->set( 'deploy_path', '~/projects/wt-orbis-5' )
 	->set( 'themes_dir', '~/www/orbis.pronamic.nl/public_html/wp-content/themes' );
 
 /**
