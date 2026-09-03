@@ -6,7 +6,8 @@ use Pronamic\WordPress\Money\Money;
  */
 $date_query = [];
 
-$date = filter_input( INPUT_GET, 'date', FILTER_SANITIZE_STRING );
+$date = filter_input( INPUT_GET, 'date', FILTER_UNSAFE_RAW );
+$date = ( null === $date ) ? '' : sanitize_text_field( wp_unslash( $date ) );
 
 if ( ! empty( $date ) ) {
 	$date = explode( '-', $date );

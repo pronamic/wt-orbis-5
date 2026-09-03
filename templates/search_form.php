@@ -1,6 +1,8 @@
 <?php
 
-$s = filter_input( INPUT_GET, 's', FILTER_SANITIZE_STRING );
+$search_query = filter_input( INPUT_GET, 's', FILTER_UNSAFE_RAW );
+
+$s = ( null === $search_query ) ? '' : sanitize_text_field( wp_unslash( $search_query ) );
 
 $has_advanced = is_post_type_archive( 'orbis_person' ) || is_post_type_archive( 'orbis_project' );
 
@@ -60,8 +62,10 @@ switch ( get_query_var( 'post_type' ) ) {
 					<div class="col-12">
 						<?php
 
-						$slugs = filter_input( INPUT_GET, 'c', FILTER_SANITIZE_STRING );
-						$slugs = explode( ',', $slugs );
+						$slugs_value = filter_input( INPUT_GET, 'c', FILTER_UNSAFE_RAW );
+						$slugs_value = ( null === $slugs_value ) ? '' : sanitize_text_field( wp_unslash( $slugs_value ) );
+
+						$slugs = explode( ',', $slugs_value );
 
 						$terms = get_terms(
 							[
