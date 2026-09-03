@@ -1,7 +1,7 @@
 {
 	"name": "pronamic/wt-orbis-5",
 	"description": "The default WordPress theme for Orbis.",
-	"version": "5.0.0",
+	"license": "GPL-2.0-or-later",
 	"keywords": [
 		"orbis",
 		"wordpress",
@@ -50,23 +50,27 @@
 		"phpmd/phpmd": "^2.4",
 		"deployer/deployer": "^7.0",
 		"pronamic/wp-coding-standards": "^2.1",
-		"pronamic/pronamic-cli": "^1.1"
+		"wp-cli/dist-archive-command": "*",
+		"wp-cli/wp-cli-bundle": "*"
 	},
 	"scripts": {
 		"build": [
-			"rm -rf ./build",
-			"mkdir ./build",
-			"mkdir ./build/stage-1",
-			"mkdir ./build/stage-2",
+			"rm -rf ./build/stage-1",
+			"rm -rf ./build/orbis-5",
 			"rsync --recursive --verbose --exclude-from=.distignore --exclude=/vendor/ ./ ./build/stage-1/",
 			"composer install --no-dev --prefer-dist --optimize-autoloader --working-dir=./build/stage-1/",
-			"rsync --recursive --verbose --exclude-from=.distignore ./build/stage-1/ ./build/stage-2/"
+			"rsync --recursive --verbose --exclude-from=.distignore ./build/stage-1/ ./build/orbis-5/",
+			"vendor/bin/wp i18n make-pot ./build/orbis-5/ --slug=orbis-5",
+			"vendor/bin/wp i18n make-mo ./build/orbis-5/languages/",
+			"vendor/bin/wp dist-archive ./build/orbis-5/ --plugin-dirname=orbis-5 --force"
+		],
+		"dist-archive": "wp dist-archive . --plugin-dirname=orbis-5",
+		"make-pot": [
+			"@build",
+			"rsync --recursive --delete --verbose ./build/orbis-5/languages/ ./languages/",
+			"vendor/bin/wp i18n update-po ./languages/orbis-5.pot"
 		],
 		"phpcs": "vendor/bin/phpcs",
-		"translate": [
-			"@build",
-			"rsync --recursive --delete --verbose ./build/stage-2/languages/ ./languages/"
-		],
 		"qa": [
 			"@phpcs"
 		]
