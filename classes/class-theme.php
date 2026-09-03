@@ -5,6 +5,20 @@
  */
 class Orbis_Theme {
 	/**
+	 * Scripts
+	 *
+	 * @var Orbis_Theme_Scripts
+	 */
+	private $scripts;
+
+	/**
+	 * Admin
+	 *
+	 * @var Orbis_Theme_Admin|null
+	 */
+	private $admin;
+
+	/**
 	 * Construct
 	 */
 	public function __construct() {
