@@ -2,10 +2,15 @@
 
 $p2p_type = p2p_type( 'orbis_persons_to_lists' );
 
-if ( 'orbis_list_add' === filter_input( INPUT_GET, 'action', FILTER_SANITIZE_STRING ) && wp_verify_nonce( filter_input( INPUT_GET, '_wpnonce' ), 'orbis_list_add' ) ) {
-	$from   = filter_input( INPUT_GET, 'from', FILTER_SANITIZE_STRING );
-	$to     = filter_input( INPUT_GET, 'to', FILTER_SANITIZE_STRING );
-	$active = filter_input( INPUT_GET, 'active', FILTER_SANITIZE_STRING );
+$orbis_list_action = filter_input( INPUT_GET, 'action', FILTER_UNSAFE_RAW );
+$orbis_list_action = ( null === $orbis_list_action ) ? null : sanitize_text_field( wp_unslash( $orbis_list_action ) );
+
+if ( 'orbis_list_add' === $orbis_list_action && wp_verify_nonce( filter_input( INPUT_GET, '_wpnonce' ), 'orbis_list_add' ) ) {
+	$from = filter_input( INPUT_GET, 'from', FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE );
+	$to   = filter_input( INPUT_GET, 'to', FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE );
+
+	$active_raw = filter_input( INPUT_GET, 'active', FILTER_UNSAFE_RAW );
+	$active     = ( null === $active_raw ) ? null : sanitize_text_field( wp_unslash( $active_raw ) );
 
 	$p2p_type->connect(
 		$from,

@@ -6,7 +6,9 @@
 
 		array_unshift( $statuses, __( '— Select Status —', 'orbis-5' ) );
 
-		$status = filter_input( INPUT_GET, 'orbis_deal_status', FILTER_SANITIZE_STRING );
+		$status_value = filter_input( INPUT_GET, 'orbis_deal_status', FILTER_UNSAFE_RAW );
+
+		$status = ( null === $status_value ) ? '' : sanitize_text_field( wp_unslash( $status_value ) );
 
 		foreach ( $statuses as $key => $label ) {
 			printf(

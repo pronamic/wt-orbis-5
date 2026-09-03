@@ -4,7 +4,7 @@
 	wp_dropdown_users(
 		[
 			'name'             => 'orbis_task_assignee',
-			'selected'         => filter_input( INPUT_GET, 'orbis_task_assignee', FILTER_SANITIZE_STRING ),
+			'selected'         => filter_input( INPUT_GET, 'orbis_task_assignee', FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE ),
 			'show_option_none' => __( '— Select Assignee —', 'orbis-5' ),
 			'class'            => 'form-control',
 		] 
