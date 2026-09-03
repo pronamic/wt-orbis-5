@@ -13,7 +13,7 @@
 			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 			<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
 		<![endif]-->
-		<?php 
+		<?php
 		// @codingStandardsIgnoreEnd
 		// Ignoring WordPress.WP.EnqueuedResources.NonEnqueuedScript: only loading script when IE9 is used.
 		?>
@@ -50,7 +50,7 @@
 							'theme_location' => 'primary',
 							'depth'          => 2,
 							'fallback_cb'    => '',
-						] 
+						]
 					);
 
 					?>
@@ -73,32 +73,33 @@
 
 						<?php $current_user = wp_get_current_user(); ?>
 
-						<ul class="nav nav-inline pull-right">
-							<li class="nav-item dropdown me-3">
-								<a data-bs-toggle="dropdown" class="dropdown-toggle text-decoration-none" href="#" role="button" aria-expanded="false"><?php echo get_avatar( $current_user->ID, 24 ); ?> <?php echo esc_html( $current_user->display_name ); ?></a>
+						<ul class="nav ms-auto align-items-center gap-2">
+							<li class="nav-item dropdown">
+								<button data-bs-toggle="dropdown" class="btn btn-light dropdown-toggle d-flex align-items-center gap-2 rounded-pill px-2 py-1" type="button" aria-expanded="false">
+									<?php echo get_avatar( $current_user->ID, 32, '', '', [ 'class' => [ 'rounded-circle', 'flex-shrink-0' ] ] ); ?>
+									<span><?php echo esc_html( $current_user->display_name ); ?></span>
+								</button>
 
 								<ul class="dropdown-menu dropdown-menu-end">
-									<li class="dropdown-item">
-										<a href="http://orbiswp.com/help/"><i class="fa fa-question-circle"></i> <?php esc_html_e( 'Help', 'orbis-5' ); ?></a>
+									<li>
+										<a class="dropdown-item" href="http://orbiswp.com/help/"><i class="fa fa-question-circle"></i> <?php esc_html_e( 'Help', 'orbis-5' ); ?></a>
 									</li>
-									<li class="dropdown-item">
-										<a href="<?php echo esc_attr( admin_url( 'profile.php' ) ); ?>"><i class="fa fa-user"></i> <?php esc_html_e( 'Edit profile', 'orbis-5' ); ?></a>
+									<li>
+										<a class="dropdown-item" href="<?php echo esc_url( admin_url( 'profile.php' ) ); ?>"><i class="fa fa-user"></i> <?php esc_html_e( 'Edit profile', 'orbis-5' ); ?></a>
 									</li>
-									<li class="dropdown-divider"></li>
-									<li class="dropdown-item">
-										<a href="<?php echo esc_attr( wp_logout_url() ); ?>"><i class="fa fa-power-off"></i> <?php esc_html_e( 'Log out', 'orbis-5' ); ?></a>
-										</li>
+									<li><hr class="dropdown-divider"></li>
+									<li>
+										<a class="dropdown-item" href="<?php echo esc_url( wp_logout_url() ); ?>"><i class="fa fa-power-off"></i> <?php esc_html_e( 'Log out', 'orbis-5' ); ?></a>
+									</li>
 								</ul>
 							</li>
 
-							<li class="nav-item dropdown me-3">
-								<a data-bs-toggle="dropdown" class="dropdown-toggle search-btn" href="#" role="button" aria-expanded="false"><i class="fa fa-search"></i></a>
+							<li class="nav-item dropdown">
+								<button data-bs-toggle="dropdown" class="btn btn-light rounded-circle p-2 lh-1 search-btn" type="button" aria-label="<?php esc_attr_e( 'Search', 'orbis-5' ); ?>" aria-expanded="false"><i class="fa fa-search" aria-hidden="true"></i></button>
 
-								<div class="dropdown-menu dropdown-menu-end p-3">
-									<form method="get" class="navbar-form" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
-										<div class="form-group">
-											<input type="search" name="s" class="form-control search-input" placeholder="<?php esc_attr_e( 'Search', 'orbis-5' ); ?>" value="<?php echo esc_attr( $s ); ?>">
-										</div>
+								<div class="dropdown-menu dropdown-menu-end p-3 mt-2">
+									<form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
+										<input type="search" name="s" class="form-control search-input" placeholder="<?php esc_attr_e( 'Search', 'orbis-5' ); ?>" value="<?php echo esc_attr( $s ); ?>">
 									</form>
 								</div>
 							</li>
