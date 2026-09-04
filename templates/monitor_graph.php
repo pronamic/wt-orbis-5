@@ -28,7 +28,7 @@ switch ( $period ) {
 		break;
 }
 
-$last_year   = mktime( 0, 0, 0, date( 'm' ), date( 'd' ), date( 'Y' ) - 1 );
+$last_year   = new DateTimeImmutable( '1 year ago midnight', new DateTimeZone( 'UTC' ) );
 $graph_title = esc_html__( 'Average Response Time Per ', 'orbis-5' ) . $label;
 
 $response_times = $wpdb->get_results(
@@ -49,7 +49,7 @@ $response_times = $wpdb->get_results(
 		monitored_date ASC
 ",
 		$post->ID,
-		$last_year
+		$last_year->format( 'Y-m-d H:i:s' )
 	)
 );
 
