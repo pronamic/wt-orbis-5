@@ -128,7 +128,7 @@ if ( $total_deals ) {
 				<h1><?php echo esc_html( round( $percentage ) ) . '%'; ?> <span style="font-size: 16px; font-weight: normal;">of the deals have been won</span> </h1>
 
 				<div class="progress progress-striped active">
-					<div class="progress-bar" role="progressbar" aria-valuenow="<?php echo esc_html( round( $total ) ); ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo esc_html( round( $percentage ) ) . '%'; ?>;">
+					<div class="progress-bar" role="progressbar" aria-valuenow="<?php echo esc_html( round( $percentage ) ); ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo esc_html( round( $percentage ) ) . '%'; ?>;">
 						<span class="sr-only"><?php echo esc_html( round( $percentage ) ) . '%'; ?> Complete</span>
 					</div>
 				</div>
