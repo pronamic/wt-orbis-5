@@ -1,28 +1,44 @@
-# Build
-/build/
-
-# Deploy
-/deploy/
-
-# Source
-/src/
-
-# Node
-/node_modules/
-
-/.distignore
-/.gitignore
-/.git
-
-/package-lock.json
-/package.json
-
-/phpcs.ruleset.xml
+.distignore
 
 .DS_Store
 
-/.editorconfig
+.editorconfig
 
-/deploy.php
+.git/
+.github/
+.gitattributes
+.gitignore
 
-/phpcs.xml.dist
+.wp-env.json
+
+.phpcs.dir.phpcompatibility.xml
+.phpcs.dir.xml
+
+.php-cs-fixer.dist.php
+
+.phive
+.phpdoc
+
+phpdoc.dist.xml
+
+phpcs.ruleset.xml
+phpcs.xml.dist
+phpmd.ruleset.xml
+
+phpunit.xml.dist
+
+phpstan.neon
+
+psalm.xml
+
+deploy.php
+
+package.json
+package-lock.json
+
+/vendor/bin/
+
+/build/
+/deploy/
+/node_modules/
+/src/
