@@ -6,7 +6,7 @@ $is_advanced    = ! empty( $principal ) || ! empty( $invoice_number );
 
 ?>
 
-<div id="advanced-search" class="<?php echo $is_advanced ? 'in' : 'collapse'; ?>">
+<div id="advanced-search" class="<?php echo $is_advanced ? 'show' : 'collapse'; ?>">
 	<fieldset>
 		<legend><?php esc_html_e( 'Advanced Search', 'orbis-5' ); ?></legend>
 
@@ -22,7 +22,7 @@ $is_advanced    = ! empty( $principal ) || ! empty( $invoice_number );
 
 		<div class="form-footer">
 			<button type="submit" class="btn btn-primary"><?php esc_html_e( 'Search', 'orbis-5' ); ?></button>
-			<button type="button" class="btn btn-secondary" data-toggle="collapse" data-target="#advanced-search"><?php esc_html_e( 'Cancel', 'orbis-5' ); ?></button>
+			<button type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#advanced-search"><?php esc_html_e( 'Cancel', 'orbis-5' ); ?></button>
 		</div>
 	</fieldset>
 </div>

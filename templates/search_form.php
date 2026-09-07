@@ -48,7 +48,7 @@ switch ( get_query_var( 'post_type' ) ) {
 
 			<div class="row row-cols-lg-auto g-3 align-items-center">
 				<div class="col-12">
-					<label for="orbis_search_query" class="sr-only"><?php esc_html_e( 'Search', 'orbis-5' ); ?></label>
+					<label for="orbis_search_query" class="visually-hidden"><?php esc_html_e( 'Search', 'orbis-5' ); ?></label>
 
 					<input id="orbis_search_query" type="search" class="form-control" name="s" placeholder="<?php esc_attr_e( 'Search', 'orbis-5' ); ?>" value="<?php echo esc_attr( $s ); ?>">
 				</div>
@@ -70,7 +70,7 @@ switch ( get_query_var( 'post_type' ) ) {
 						$terms = get_terms(
 							[
 								'taxonomy' => 'orbis_person_category',
-							] 
+							]
 						);
 
 						printf(
@@ -109,14 +109,14 @@ switch ( get_query_var( 'post_type' ) ) {
 				<?php if ( $has_advanced ) : ?>
 
 					<div class="col-12">
-						<small><a href="#" class="advanced-search-link" data-toggle="collapse" data-target="#advanced-search"><?php esc_html_e( 'Advanced Search', 'orbis-5' ); ?></a></small>
+						<small><a href="#" class="advanced-search-link" data-bs-toggle="collapse" data-bs-target="#advanced-search"><?php esc_html_e( 'Advanced Search', 'orbis-5' ); ?></a></small>
 					</div>
 
 				<?php endif; ?>
 			</div>
 
-			<div class="form-inline">
-				<div class="dropdown show ml-1">
+			<div class="d-flex align-items-center gap-2">
+				<div class="dropdown">
 					<button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
 						<?php
 
@@ -165,7 +165,7 @@ switch ( get_query_var( 'post_type' ) ) {
 								[
 									'orderby' => $sorting_term,
 									'order'   => $order,
-								] 
+								]
 							);
 
 							printf(
@@ -192,7 +192,7 @@ switch ( get_query_var( 'post_type' ) ) {
 
 						?>
 						<div class="dropdown">
-							<button class="btn btn-secondary dropdown-toggle ml-1" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php esc_html_e( 'Download', 'orbis-5' ); ?></button>
+							<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false"><?php esc_html_e( 'Download', 'orbis-5' ); ?></button>
 
 							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 								<a class="dropdown-item" href="<?php echo esc_url( $xls_url ); ?>" target="_blank"><i class="fa fa-file-excel-o" aria-hidden="true"></i> <?php esc_html_e( 'Excel', 'orbis-5' ); ?></a>
