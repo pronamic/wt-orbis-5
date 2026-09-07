@@ -1,6 +1,6 @@
 {
-	"name": "@pronamic/wt-orbis-4",
-	"version": "4.0.0",
+	"name": "@pronamic/wt-orbis-5",
+	"version": "5.0.0",
 	"description": "The default WordPress theme for Orbis.",
 	"author": {
 		"name": "Pronamic",
@@ -21,13 +21,13 @@
 		"crm",
 		"intranet"
 	],
-	"homepage": "https://github.com/wp-orbis/wt-orbis-4",
+	"homepage": "https://github.com/wp-orbis/wt-orbis-5",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/wp-orbis/wt-orbis-4.git"
+		"url": "https://github.com/wp-orbis/wt-orbis-5.git"
 	},
 	"bugs": {
-		"url": "https://github.com/pronamic/wt-orbis-4/issues",
+		"url": "https://github.com/pronamic/wt-orbis-5/issues",
 		"email": "support@pronamic.eu"
 	},
 	"dependencies": {

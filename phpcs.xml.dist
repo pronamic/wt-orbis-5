@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<ruleset name="Orbis 4">
+<ruleset name="Orbis 5">
 	<file>.</file>
 
 	<exclude-pattern type="relative">^build/*</exclude-pattern>
