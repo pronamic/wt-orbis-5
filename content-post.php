@@ -136,7 +136,7 @@
 					[
 						'orderby'  => 'name',
 						'title_li' => '',
-					] 
+					]
 				);
 
 				?>
@@ -162,7 +162,7 @@
 								'smallest' => 10,
 								'largest'  => 22,
 								'unit'     => 'px',
-							] 
+							]
 						);
 
 						?>

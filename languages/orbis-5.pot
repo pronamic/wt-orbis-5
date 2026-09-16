@@ -351,19 +351,16 @@ msgid "© %1$s %2$s. WordPress theme by <a href=\"%3$s\">Pronamic</a>."
 msgstr ""
 
 #: front-page.php:42
-#: includes/widgets/orbis-widget-stats.php:35
 msgid "Companies"
 msgstr ""
 
 #: front-page.php:59
 #: includes/projects.php:6
-#: includes/widgets/orbis-widget-stats.php:41
 msgid "Projects"
 msgstr ""
 
 #: front-page.php:76
 #: includes/timesheets.php:14
-#: includes/widgets/orbis-widget-stats.php:47
 msgid "Persons"
 msgstr ""
 
@@ -515,7 +512,6 @@ msgstr ""
 
 #: includes/widgets/orbis-widget-news.php:110
 #: includes/widgets/orbis-widget-posts.php:147
-#: includes/widgets/orbis-widget-stats.php:72
 msgid "Title:"
 msgstr ""
 
@@ -545,14 +541,6 @@ msgstr ""
 
 #: includes/widgets/orbis-widget-posts.php:155
 msgid "Post type:"
-msgstr ""
-
-#: includes/widgets/orbis-widget-stats.php:8
-msgid "Orbis - Stats"
-msgstr ""
-
-#: includes/widgets/orbis-widget-stats.php:29
-msgid "Posts"
 msgstr ""
 
 #: index.php:14

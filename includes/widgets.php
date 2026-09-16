@@ -1,18 +1,9 @@
 <?php
 
 /**
- * Widget includes
- */
-require_once get_template_directory() . '/includes/widgets/orbis-widget-stats.php';
-
-/**
  * Register our sidebars and widgetized areas.
  */
 function orbis_widgets_init() {
-
-	/* Register custom WordPress Widgets */
-
-	register_widget( 'Orbis_Stats_Widget' );
 
 	/* Register Widget Areas */
 

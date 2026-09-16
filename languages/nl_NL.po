@@ -328,17 +328,15 @@ msgstr "Tags"
 msgid "© %1$s %2$s. WordPress theme by <a href=\"%3$s\">Pronamic</a>."
 msgstr "© %1$s %2$s. WordPress thema door <a href=\"%3$s\">Pronamic</a>."
 
-#: front-page.php:42 includes/widgets/orbis-widget-stats.php:35
+#: front-page.php:42
 msgid "Companies"
 msgstr "Bedrijven"
 
 #: front-page.php:59 includes/projects.php:6
-#: includes/widgets/orbis-widget-stats.php:41
 msgid "Projects"
 msgstr "Projecten"
 
 #: front-page.php:76 includes/timesheets.php:14
-#: includes/widgets/orbis-widget-stats.php:47
 msgid "Persons"
 msgstr "Personen"
 
@@ -495,7 +493,6 @@ msgstr "Voorpagina onderkant widget"
 
 #: includes/widgets/orbis-widget-news.php:110
 #: includes/widgets/orbis-widget-posts.php:147
-#: includes/widgets/orbis-widget-stats.php:72
 msgid "Title:"
 msgstr "Titel:"
 
@@ -526,14 +523,6 @@ msgstr "Geen %3$s gevonden. <a href=\"%1$s\">Voeg je eerste %2$s toe</a>."
 #: includes/widgets/orbis-widget-posts.php:155
 msgid "Post type:"
 msgstr "Post type:"
-
-#: includes/widgets/orbis-widget-stats.php:8
-msgid "Orbis - Stats"
-msgstr "Orbis - Statistieken"
-
-#: includes/widgets/orbis-widget-stats.php:29
-msgid "Posts"
-msgstr "Berichten"
 
 #: index.php:14
 msgid "Type"
