@@ -45,19 +45,3 @@ function orbis_columns_grid( $atts, $content = null ) {
 
 add_shortcode( 'row', 'orbis_row_grid' );
 add_shortcode( 'col', 'orbis_columns_grid' );
-
-/**
- * Panel
- */
-function orbis_panel_shortcode( $atts, $content = null ) {
-	$atts = shortcode_atts(
-		[
-			'class' => '',
-		],
-		$atts
-	);
-
-	return '<div class="panel ' . $atts['class'] . '"><div class="content">' . do_shortcode( $content ) . '</div></div>';
-}
-
-add_shortcode( 'panel', 'orbis_panel_shortcode' );
