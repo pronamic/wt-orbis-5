@@ -61,19 +61,3 @@ function orbis_panel_shortcode( $atts, $content = null ) {
 }
 
 add_shortcode( 'panel', 'orbis_panel_shortcode' );
-
-/**
- * Icon
- */
-function orbis_icon_shortcode( $atts, $content = null ) {
-	$atts = shortcode_atts(
-		[
-			'type' => 'phone',
-		],
-		$atts
-	);
-
-	return '<i class="fa fa-' . $atts['type'] . '"></i>';
-}
-
-add_shortcode( 'icon', 'orbis_icon_shortcode' );
