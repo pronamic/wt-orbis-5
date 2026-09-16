@@ -53,38 +53,6 @@ function orbis_widgets_init() {
 		]
 	);
 
-	register_sidebar(
-		[
-			'name'          => __( 'Frontpage Top Widget', 'orbis-5' ),
-			'id'            => 'frontpage-top-widget',
-			'before_widget' => '<div class="col-md-12"><div id="%1$s" class="mb-3 card %2$s">',
-			'after_widget'  => '</div></div></div>',
-			'before_title'  => '<div class="card-header">',
-			'after_title'   => '</div><div class="card-body">',
-		]
-	);
-
-	register_sidebar(
-		[
-			'name'          => __( 'Frontpage Left Widget', 'orbis-5' ),
-			'id'            => 'frontpage-left-widget',
-			'before_widget' => '<div id="%1$s" class="mb-3 card %2$s">',
-			'after_widget'  => '</div>',
-			'before_title'  => '<div class="card-header">',
-			'after_title'   => '</div>',
-		]
-	);
-
-	register_sidebar(
-		[
-			'name'          => __( 'Frontpage Right Widget', 'orbis-5' ),
-			'id'            => 'frontpage-right-widget',
-			'before_widget' => '<div id="%1$s" class="mb-3 card %2$s">',
-			'after_widget'  => '</div>',
-			'before_title'  => '<div class="card-header">',
-			'after_title'   => '</div>',
-		]
-	);
 }
 
 add_action( 'widgets_init', 'orbis_widgets_init' );
