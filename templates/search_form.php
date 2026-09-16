@@ -1,8 +1,6 @@
 <?php
 
-$search_query = filter_input( INPUT_GET, 's', FILTER_UNSAFE_RAW );
-
-$s = ( null === $search_query ) ? '' : sanitize_text_field( wp_unslash( $search_query ) );
+$s = ( isset( $_GET['s'] ) ) ? sanitize_text_field( wp_unslash( $_GET['s'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 
 $has_advanced = is_post_type_archive( 'orbis_person' ) || is_post_type_archive( 'orbis_project' );
 
@@ -37,6 +35,12 @@ switch ( get_query_var( 'post_type' ) ) {
 		$sorting_terms['project_invoice_number_modified'] = esc_html__( 'Invoice Number Modified', 'orbis-5' );
 		break;
 
+	case 'orbis_task':
+		$sorting_terms[] = '-';
+
+		$sorting_terms['orbis_task_due_at'] = esc_html__( 'Due At', 'orbis-5' );
+		break;
+
 	default:
 		break;
 }
@@ -62,10 +66,8 @@ switch ( get_query_var( 'post_type' ) ) {
 					<div class="col-12">
 						<?php
 
-						$slugs_value = filter_input( INPUT_GET, 'c', FILTER_UNSAFE_RAW );
-						$slugs_value = ( null === $slugs_value ) ? '' : sanitize_text_field( wp_unslash( $slugs_value ) );
-
-						$slugs = explode( ',', $slugs_value );
+						$slugs_value = ( isset( $_GET['c'] ) ) ? wp_unslash( $_GET['c'] ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+						$slugs       = ( is_array( $slugs_value ) ) ? array_map( 'sanitize_text_field', $slugs_value ) : explode( ',', sanitize_text_field( $slugs_value ) );
 
 						$terms = get_terms(
 							[
@@ -120,10 +122,9 @@ switch ( get_query_var( 'post_type' ) ) {
 					<button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
 						<?php
 
-						//phpcs:disable
-						$orderby   = ( isset( $_GET['orderby'] ) ) ? $sorting_terms[$_GET['orderby']] : '';
-						$sort_text = ( $orderby ) ? $orderby : esc_html__( 'Sort by…', 'orbis-5' );
-						//phpcs:enable
+						$orderby_key = ( isset( $_GET['orderby'] ) ) ? sanitize_key( wp_unslash( $_GET['orderby'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+						$orderby     = ( array_key_exists( $orderby_key, $sorting_terms ) ) ? $sorting_terms[ $orderby_key ] : '';
+						$sort_text   = ( $orderby ) ? $orderby : esc_html__( 'Sort by…', 'orbis-5' );
 						echo esc_html( $sort_text );
 
 						if ( isset( $_GET['order'] ) ) {
