@@ -3,7 +3,6 @@
 /**
  * Widget includes
  */
-require_once get_template_directory() . '/includes/widgets/orbis-widget-news.php';
 require_once get_template_directory() . '/includes/widgets/orbis-widget-stats.php';
 
 /**
@@ -28,7 +27,6 @@ function orbis_widgets_init() {
 
 	/* Register custom WordPress Widgets */
 
-	register_widget( 'Orbis_News_Widget' );
 	register_widget( 'Orbis_Stats_Widget' );
 
 	/* Register Widget Areas */
