@@ -17,13 +17,6 @@ while ( have_posts() ) :
 	</div>
 
 	<div id="dashboard-content-holder">
-		<?php if ( is_active_sidebar( 'dashboard-sidebar' ) ) : ?>
-
-			<div class="row">
-				<?php dynamic_sidebar( 'dashboard-sidebar' ); ?>
-			</div>
-
-		<?php endif; ?>
 	</div>
 
 <?php endwhile; ?>
