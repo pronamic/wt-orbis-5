@@ -32,12 +32,98 @@ class Orbis_Theme {
 
 		// Actions
 		add_action( 'after_setup_theme', [ $this, 'after_setup_theme' ] );
+		add_action( 'init', [ $this, 'register_block_styles' ] );
 
 		add_action( 'template_redirect', [ $this, 'template_redirect' ] );
 		add_filter( 'query_vars', [ $this, 'query_vars' ] );
 		add_action( 'pre_get_posts', [ $this, 'pre_get_posts' ] );
 
 		add_filter( 'navigation_markup_template', [ $this, 'navigation_markup_template' ], 10, 2 );
+		add_filter( 'render_block_core/list', [ $this, 'render_list_block' ], 10, 2 );
+		add_filter( 'render_block_core/post-template', [ $this, 'render_post_template_block' ], 10, 2 );
+	}
+
+	/**
+	 * Register block styles.
+	 */
+	public function register_block_styles() {
+		register_block_style(
+			'core/list',
+			[
+				'name'  => 'bootstrap-list-group',
+				'label' => __( 'Bootstrap List Group', 'orbis-5' ),
+			]
+		);
+
+		register_block_style(
+			'core/post-template',
+			[
+				'name'  => 'bootstrap-list-group',
+				'label' => __( 'Bootstrap List Group', 'orbis-5' ),
+			]
+		);
+	}
+
+	/**
+	 * Render List block.
+	 *
+	 * @param string $block_content Block content.
+	 * @param array  $block         Block data.
+	 * @return string
+	 */
+	public function render_list_block( $block_content, $block ) {
+		$class_name = $block['attrs']['className'] ?? '';
+
+		if ( '' === $block_content || ! in_array( 'is-style-bootstrap-list-group', preg_split( '/\s+/', $class_name ), true ) ) {
+			return $block_content;
+		}
+
+		$processor = new WP_HTML_Tag_Processor( $block_content );
+
+		if ( ! $processor->next_tag() || ! $processor->has_class( 'wp-block-list' ) ) {
+			return $block_content;
+		}
+
+		$processor->add_class( 'list-group' );
+
+		while ( $processor->next_tag( 'LI' ) ) {
+			$processor->add_class( 'list-group-item' );
+		}
+
+		return $processor->get_updated_html();
+	}
+
+	/**
+	 * Render Post Template block.
+	 *
+	 * @param string $block_content Block content.
+	 * @param array  $block         Block data.
+	 * @return string
+	 */
+	public function render_post_template_block( $block_content, $block ) {
+		$class_name = $block['attrs']['className'] ?? '';
+
+		if ( '' === $block_content || ! in_array( 'is-style-bootstrap-list-group', preg_split( '/\s+/', $class_name ), true ) ) {
+			return $block_content;
+		}
+
+		$processor = new WP_HTML_Tag_Processor( $block_content );
+
+		if ( ! $processor->next_tag( 'UL' ) || ! $processor->has_class( 'wp-block-post-template' ) ) {
+			return $block_content;
+		}
+
+		$processor->add_class( 'list-group' );
+
+		while ( $processor->next_tag( 'LI' ) ) {
+			if ( ! $processor->has_class( 'wp-block-post' ) ) {
+				continue;
+			}
+
+			$processor->add_class( 'list-group-item' );
+		}
+
+		return $processor->get_updated_html();
 	}
 
 	/**
@@ -64,7 +150,7 @@ class Orbis_Theme {
 		register_nav_menus(
 			[
 				'primary' => __( 'Primary Menu', 'orbis-5' ),
-			] 
+			]
 		);
 
 		/* Image sizes */
@@ -88,7 +174,7 @@ class Orbis_Theme {
 				[
 					'taxonomy' => 'orbis_person_category',
 					'include'  => $args['c'],
-				] 
+				]
 			);
 
 			$args['c'] = implode( ',', wp_list_pluck( $terms, 'slug' ) );

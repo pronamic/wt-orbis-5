@@ -1,7 +1,7 @@
 === Orbis 3 ===
 Contributors: pronamic, remcotolsma, kjtolsma, rubendroogh
 Tags: orbis, intranet
-Requires at least: 4.6
+Requires at least: 6.2
 Tested up to: 4.6
 Stable tag: 3.0.0
 
