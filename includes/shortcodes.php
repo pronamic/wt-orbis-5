@@ -37,7 +37,7 @@ function orbis_columns_grid( $atts, $content = null ) {
 			'number' => '12',
 			'offset' => '',
 		],
-		$atts 
+		$atts
 	);
 
 	return '<div class="col-md-' . $atts['number'] . ' ' . ( $atts['offset'] ? 'col-md-offset-' . $atts['offset'] : '' ) . '">' . do_shortcode( $content ) . '</div>';
@@ -54,7 +54,7 @@ function orbis_panel_shortcode( $atts, $content = null ) {
 		[
 			'class' => '',
 		],
-		$atts 
+		$atts
 	);
 
 	return '<div class="panel ' . $atts['class'] . '"><div class="content">' . do_shortcode( $content ) . '</div></div>';
@@ -70,7 +70,7 @@ function orbis_icon_shortcode( $atts, $content = null ) {
 		[
 			'type' => 'phone',
 		],
-		$atts 
+		$atts
 	);
 
 	return '<i class="fa fa-' . $atts['type'] . '"></i>';
