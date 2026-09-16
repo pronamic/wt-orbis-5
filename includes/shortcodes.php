@@ -1,11 +1,6 @@
 <?php
 
 /**
- * Shortcode support for text widgets.
- */
-add_filter( 'widget_text', 'do_shortcode' );
-
-/**
  * Fix shortcode output
  */
 function orbis_shortcode_empty_paragraph_fix( $content ) {
