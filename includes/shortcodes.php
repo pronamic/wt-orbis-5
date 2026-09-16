@@ -63,24 +63,6 @@ function orbis_panel_shortcode( $atts, $content = null ) {
 add_shortcode( 'panel', 'orbis_panel_shortcode' );
 
 /**
- * Table
- */
-function orbis_table_shortcode( $atts, $content = null ) {
-	$atts = shortcode_atts(
-		[
-			'classes' => '',
-		],
-		$atts 
-	);
-
-	$content = str_replace( '<table', '<table class="table ' . $atts['classes'] . '"', do_shortcode( $content ) );
-
-	return $content;
-}
-
-add_shortcode( 'table', 'orbis_table_shortcode' );
-
-/**
  * Icon
  */
 function orbis_icon_shortcode( $atts, $content = null ) {
