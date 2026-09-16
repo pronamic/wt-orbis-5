@@ -28,10 +28,10 @@ function orbis_plugin_activated( $plugin ) {
 function orbis_status_taxonomy_add_field() {
 	?>
 
-	<tr class="form-field">  
-		<th scope="row" valign="top">  
+	<tr class="form-field">
+		<th scope="row" valign="top">
 			<label for="status_type"><?php esc_html_e( 'Status type.', 'orbis-5' ); ?></label>
-		</th>  
+		</th>
 		<td>
 			<select name="status_type" id="status_type" >
 				<option value="primary">Primary</option>
@@ -196,17 +196,6 @@ function orbis_custom_excerpt( $excerpt, $charlength = 30 ) {
 
 	echo esc_html( $excerpt );
 }
-
-/**
- * Load timesheet data with AJAX
- */
-function orbis_load_timesheet_data() {
-	get_template_part( 'templates/widget_timesheets' );
-
-	die();
-}
-
-add_action( 'wp_ajax_load_timesheet_data', 'orbis_load_timesheet_data' );
 
 /**
  * Page title

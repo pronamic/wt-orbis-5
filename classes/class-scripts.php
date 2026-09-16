@@ -101,14 +101,6 @@ class Orbis_Theme_Scripts {
 			true
 		);
 
-		wp_localize_script(
-			'wt-orbis',
-			'orbis_timesheets_vars',
-			[
-				'ajax_url' => admin_url( 'admin-ajax.php' ),
-			]
-		);
-
 		wp_register_style(
 			'wt-orbis',
 			$uri . '/css/style' . $min . '.css',
