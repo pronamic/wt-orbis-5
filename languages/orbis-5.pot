@@ -513,34 +513,12 @@ msgstr ""
 msgid "Frontpage Bottom Widget"
 msgstr ""
 
-#: includes/widgets/orbis-widget-comments.php:8
-msgid "Orbis - Comments"
-msgstr ""
-
-#: includes/widgets/orbis-widget-comments.php:42
-msgid "Keychain"
-msgstr ""
-
-#: includes/widgets/orbis-widget-comments.php:45
-msgid "Subscription"
-msgstr ""
-
-#: includes/widgets/orbis-widget-comments.php:48
-msgid "Comment"
-msgstr ""
-
-#: includes/widgets/orbis-widget-comments.php:66
-msgid "Posted by %1$s on %2$s"
-msgstr ""
-
-#: includes/widgets/orbis-widget-comments.php:108
 #: includes/widgets/orbis-widget-news.php:110
 #: includes/widgets/orbis-widget-posts.php:147
 #: includes/widgets/orbis-widget-stats.php:72
 msgid "Title:"
 msgstr ""
 
-#: includes/widgets/orbis-widget-comments.php:115
 #: includes/widgets/orbis-widget-posts.php:172
 msgid "Number:"
 msgstr ""

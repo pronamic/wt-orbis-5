@@ -493,34 +493,12 @@ msgstr "Voorpagina rechts widget"
 msgid "Frontpage Bottom Widget"
 msgstr "Voorpagina onderkant widget"
 
-#: includes/widgets/orbis-widget-comments.php:8
-msgid "Orbis - Comments"
-msgstr "Orbis - Reacties"
-
-#: includes/widgets/orbis-widget-comments.php:42
-msgid "Keychain"
-msgstr "Sleutelhanger"
-
-#: includes/widgets/orbis-widget-comments.php:45
-msgid "Subscription"
-msgstr "Abonnement"
-
-#: includes/widgets/orbis-widget-comments.php:48
-msgid "Comment"
-msgstr "Reactie"
-
-#: includes/widgets/orbis-widget-comments.php:66
-msgid "Posted by %1$s on %2$s"
-msgstr "Geplaatst door %1$s op %2$s."
-
-#: includes/widgets/orbis-widget-comments.php:108
 #: includes/widgets/orbis-widget-news.php:110
 #: includes/widgets/orbis-widget-posts.php:147
 #: includes/widgets/orbis-widget-stats.php:72
 msgid "Title:"
 msgstr "Titel:"
 
-#: includes/widgets/orbis-widget-comments.php:115
 #: includes/widgets/orbis-widget-posts.php:172
 msgid "Number:"
 msgstr "Aantal:"
