@@ -61,53 +61,6 @@ switch ( get_query_var( 'post_type' ) ) {
 					<button type="submit" class="btn btn-secondary"><?php esc_html_e( 'Search', 'orbis-5' ); ?></button>
 				</div>
 
-				<?php if ( is_post_type_archive( 'orbis_person' ) ) : ?>
-
-					<div class="col-12">
-						<?php
-
-						$slugs_value = ( isset( $_GET['c'] ) ) ? wp_unslash( $_GET['c'] ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-						$slugs       = ( is_array( $slugs_value ) ) ? array_map( 'sanitize_text_field', $slugs_value ) : explode( ',', sanitize_text_field( $slugs_value ) );
-
-						$terms = get_terms(
-							[
-								'taxonomy' => 'orbis_person_category',
-							]
-						);
-
-						printf(
-							'<select name="%s" class="select2" multiple="multiple" style="width: 30em;" placeholder="%s">',
-							esc_attr( 'c[]' ),
-							esc_attr__( 'All Categories', 'orbis-5' )
-						);
-
-						foreach ( $terms as $term ) {
-							printf(
-								'<option value="%s" %s">%s</option>',
-								esc_attr( $term->term_id ),
-								selected( in_array( $term->slug, $slugs, true ), true, false ),
-								esc_html( $term->name )
-							);
-						}
-
-						echo '</select>';
-
-						?>
-
-						<style type="text/css">
-							.select2-choices {
-								background-image: none;
-
-								border: 1px solid rgba(0, 0, 0, 0.15);
-								border-radius: 0.25rem;
-							}
-						</style>
-
-						<button type="submit" class="btn btn-secondary"><?php esc_html_e( 'Filter', 'orbis-5' ); ?></button>
-					</div>
-
-				<?php endif; ?>
-
 				<?php if ( $has_advanced ) : ?>
 
 					<div class="col-12">
