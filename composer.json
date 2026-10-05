@@ -39,31 +39,35 @@
 			"automattic/jetpack-autoloader": true,
 			"dealerdirect/phpcodesniffer-composer-installer": true
 		},
-		"wp-slug": "orbis-5"
+		"wp-slug": "orbis-5",
+		"sort-packages": true
 	},
 	"require": {
-		"pronamic/wp-money": "^2.4",
 		"php": ">=5.2.0",
-		"automattic/jetpack-autoloader": "^3.0"
+		"automattic/jetpack-autoloader": "^3.0",
+		"pronamic/wp-money": "^2.4"
 	},
 	"require-dev": {
+		"deployer/deployer": "^7.5",
 		"phpmd/phpmd": "^2.4",
-		"deployer/deployer": "^7.0",
 		"pronamic/wp-coding-standards": "^2.1",
+		"roots/wordpress-no-content": "^7.1",
 		"wp-cli/dist-archive-command": "*",
-		"wp-cli/wp-cli-bundle": "*",
-		"roots/wordpress-no-content": "^7.1"
+		"wp-cli/wp-cli-bundle": "*"
 	},
 	"scripts": {
 		"build": [
 			"rm -rf ./build/stage-1",
-			"rm -rf ./build/orbis-5/*",
 			"rsync --recursive --verbose --exclude-from=.distignore --exclude=/vendor/ ./ ./build/stage-1/",
 			"composer install --no-dev --prefer-dist --optimize-autoloader --working-dir=./build/stage-1/",
-			"rsync --recursive --verbose --exclude-from=.distignore ./build/stage-1/ ./build/orbis-5/",
+			"rsync --recursive --delete --delete-excluded --verbose --exclude-from=.distignore ./build/stage-1/ ./build/orbis-5/",
 			"vendor/bin/wp i18n make-pot ./build/orbis-5/ --slug=orbis-5",
 			"vendor/bin/wp i18n make-mo ./build/orbis-5/languages/",
 			"vendor/bin/wp dist-archive ./build/orbis-5/ --plugin-dirname=orbis-5 --force"
+		],
+		"deploy": [
+			"Composer\\Config::disableProcessTimeout",
+			"DEPLOYER_IMPORT=${DEPLOYER_IMPORT:-$HOME/deployer-orbis.php} vendor/bin/dep deploy"
 		],
 		"dist-archive": "wp dist-archive . --plugin-dirname=orbis-5",
 		"make-pot": [
