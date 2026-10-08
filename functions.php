@@ -12,8 +12,6 @@ require_once get_template_directory() . '/includes/template-tags.php';
 require_once get_template_directory() . '/includes/nav.php';
 require_once get_template_directory() . '/includes/customizer.php';
 require_once get_template_directory() . '/includes/monitors.php';
-require_once get_template_directory() . '/includes/tasks.php';
-require_once get_template_directory() . '/includes/timesheets.php';
 
 function orbis_plugin_activated( $plugin ) {
 	return function_exists( 'orbis_' . $plugin . '_bootstrap' );
