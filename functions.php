@@ -134,20 +134,6 @@ function orbis_get_post_type_archive_link( $post_type = null ) {
 	return get_post_type_archive_link( $post_type );
 }
 
-function orbis_get_url_post_new( $post_type = null ) {
-	if ( null === $post_type ) {
-		$post_type = orbis_get_archive_post_type();
-	}
-
-	$url = admin_url( 'post-new.php' );
-
-	if ( ! empty( $post_type ) ) {
-		$url = add_query_arg( 'post_type', $post_type, $url );
-	}
-
-	return $url;
-}
-
 if ( ! function_exists( 'orbis_price' ) ) {
 	function orbis_price( $price ) {
 		// @see https://en.wikipedia.org/wiki/Non-breaking_space#Keyboard_entry_methods
