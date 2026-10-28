@@ -11,7 +11,6 @@ require_once __DIR__ . '/vendor/autoload_packages.php';
 require_once get_template_directory() . '/includes/template-tags.php';
 require_once get_template_directory() . '/includes/nav.php';
 require_once get_template_directory() . '/includes/customizer.php';
-require_once get_template_directory() . '/includes/monitors.php';
 
 function orbis_plugin_activated( $plugin ) {
 	return function_exists( 'orbis_' . $plugin . '_bootstrap' );
